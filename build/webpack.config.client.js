@@ -37,7 +37,7 @@ if (isDev) {
         {
           test: /\.styl/,
           use: [
-            'style-loader',
+            'vue-style-loader', // 用vue-style-loader 替换 style-loader，使得样式更改有热重载功能
             'css-loader',
             {
               loader: 'postcss-loader',
@@ -69,7 +69,7 @@ if (isDev) {
         {
           test: /\.styl/,
           use: ExtractPlugin.extract({
-            fallback: 'style-loader',
+            fallback: 'vue-style-loader',
             use: [
               'css-loader',
               {

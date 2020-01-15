@@ -1,6 +1,6 @@
 <template>
-  <header :class="$style.mainHeader">
-    <h>JTodo</h ~~~~~???~~~ 1>
+  <header :class="$style.mainHeader ">
+    <h1>JTodo</h1>
   </header>
 </template>
 

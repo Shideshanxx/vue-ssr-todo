@@ -1,6 +1,6 @@
 <template>
   <header :class="$style.mainHeader">
-    <h>JTodo</h 1>
+    <h>JTodo</h  1>
   </header>
 </template>
 

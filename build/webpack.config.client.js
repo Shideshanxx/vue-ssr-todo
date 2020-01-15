@@ -21,7 +21,7 @@ const devServer = {
   port: 8000,
   host: '0.0.0.0',
   overlay: {
-    errors: true,
+    errors: true
   },
   hot: true
 }
@@ -42,7 +42,7 @@ if (isDev) {
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
+                sourceMap: true
               }
             },
             'stylus-loader'
@@ -57,7 +57,7 @@ if (isDev) {
   })
 } else {
   config = merge(baseConfig, {
-    entry:{
+    entry: {
       app: path.join(__dirname, '../client/index.js'),
       vendor: ['vue']
     },
@@ -75,7 +75,7 @@ if (isDev) {
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: true
                 }
               },
               'stylus-loader'

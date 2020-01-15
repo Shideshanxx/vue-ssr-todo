@@ -13,9 +13,15 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.(vue|js|jsx)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/,
+        enforce: 'pre'
+      },
+      {
         test: /\.vue$/,
-        loader: 'vue-loader',  
-        options: createVueloaderOptions(isDev)    // 给loader加一个option，进行配置扩展
+        loader: 'vue-loader',
+        options: createVueloaderOptions(isDev) // 给loader加一个option，进行配置扩展
       },
       {
         test: /\.jsx$/,

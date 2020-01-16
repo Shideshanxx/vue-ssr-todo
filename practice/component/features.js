@@ -1,5 +1,10 @@
 import Vue from 'vue'
 
+/**
+ * 插槽：slot,未具名插槽，具名插槽；作用域插槽
+ * provide、inject：祖先组件向其所有子孙后代注入一个依赖
+ */
+
 const ChildComponent = {
   template: '<div>child component: {{data.value}}</div>',
   inject: ['yeye', 'data'],
@@ -53,6 +58,8 @@ new Vue({
       enumerable: true
     })
 
+    // provide 和 inject 绑定并不是可响应的。这是刻意为之的。然而，如果你传入了一个可监听的对象，那么其对象的属性还是可响应的。
+    // 给data加上getter，然后provide给子孙组件，provide 和 inject 绑定就是可响应的
     return {
       yeye: this,
       data
@@ -65,6 +72,8 @@ new Vue({
     }
   },
   mounted () {
+    // ref用在组件上打印出来是vue实例，可以用ref的方式直接打印出该实例里面的内容；
+    // ref用在html标签上，打印出来是dom节点
     console.log(this.$refs.comp.value, this.$refs.span)
   },
   template: `
